@@ -1,0 +1,6 @@
+/others
+/wsl-config/my_env.sh
+/plugin/packer_compiled.lua
+/pack/github
+a.lua
+lazy-lock.json
