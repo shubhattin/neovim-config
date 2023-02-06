@@ -39,10 +39,12 @@ if not os.path.isfile(f"{nm}"):
     print(nm + " not found")
     exit()
 
+compiler_name = {"cpp": "g++", "c": "gcc"}[nm.split(".")[-1]]
+
 pth = nm.split("/")
 parent_path = sh.parent(nm)
 
-compile_data: List[Any] = sh.cmd(f"g++ {nm} -o {nm}.o", display=False)
+compile_data: List[Any] = sh.cmd(f"{compiler_name} {nm} -o {nm}.o", display=False)
 
 if compile_data[0] != 0:
     # Error
