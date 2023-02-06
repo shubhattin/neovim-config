@@ -41,7 +41,6 @@ compile_data: List[Any] = sh.cmd(f"javac {nm}.java", display=False)
 if compile_data[0] != 0:
     # Error
     print(compile_data[1])
-    exit()
 elif compile_data[0] == 0:
     # Success
     try:

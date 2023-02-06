@@ -47,7 +47,6 @@ compile_data: List[Any] = sh.cmd(f"g++ {nm} -o {nm}.o", display=False)
 if compile_data[0] != 0:
     # Error
     print(compile_data[1])
-    exit()
 elif compile_data[0] == 0:
     # Success
     try:
@@ -55,6 +54,7 @@ elif compile_data[0] == 0:
         if len(pth) > 1:
             cm += f"cd {parent_path}\n"
         sh.cmd(f"{cm}./{pth[-1]}.o", direct=False)
-        sh.delete_file(f"{nm}.o")
     except Exception:
         pass
+    finally:
+        sh.delete_file(f"{nm}.o")
