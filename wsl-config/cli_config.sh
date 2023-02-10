@@ -4,7 +4,9 @@ if [ -d ~/.local/bin ]; then
 fi
 
 # Python
-alias py='python3'
+# alias py='python3'
+# Prefer adding the following to ~/.zshrc
+# in the plugins and python, vscode
 
 # Java
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
