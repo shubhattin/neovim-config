@@ -19,8 +19,8 @@ if [ -d ~/.nvm ]; then
 fi
 
 # deta
-if [ -d ~/.deta/bin ]; then
-    export PATH="$HOME/.deta/bin:$PATH"
+if [ -d ~/.detaspace/bin ]; then
+    export PATH="/home/shubhattin/.detaspace/bin:$PATH"
 fi
 
 # bun
