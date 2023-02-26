@@ -87,12 +87,12 @@ setw -g mode-keys vi
 ```bash
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-# Use can replace python3.11 with other versions
-sudo apt install python3.11
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2
+# You can replace python3.10 with other versions
+sudo apt install python3.10
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 2
 sudo update-alternatives --config python3
 sudo apt install python3-dev python3-pip
-# Also install "python3.x-dev" like python3.11-dev
+# Also install "python3.x-dev" like python3.10-dev
 sudo apt install python3-virtualenv
 # Also install venv module with command below
 # sudo apt install python3.x-venv
