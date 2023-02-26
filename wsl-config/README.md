@@ -2,7 +2,7 @@
 
 ## Basics
 
-### Setting DNS
+### Configuring DNS
 
 ```bash
 # Using Google DNS to avoid network related issues
@@ -11,7 +11,7 @@ sudo bash -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf'
 sudo bash -c 'echo "nameserver 8.8.8.4" >> /etc/resolv.conf'
 sudo bash -c 'echo "[network]" > /etc/wsl.conf'
 sudo bash -c 'echo "generateResolvConf = false" >> /etc/wsl.conf'
-sudo chattr +i /etc/resolv.conf
+sudo chattr +i /etc/resolv.conf # setting immutable
 ```
 
 ### Download few Basic packages
@@ -112,11 +112,8 @@ sudo apt install python3-apt # apt manager python
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install neovim
-# Installing Packer
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-# Installing ClipBoard tool win32yank.exe
+# Installing Clipboard tool win32yank.exe
 curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
 unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
 chmod +x /tmp/win32yank.exe
@@ -124,10 +121,6 @@ sudo mv /tmp/win32yank.exe /usr/local/bin/
 
 # Grep Tool
 sudo apt install ripgrep
-
-# Github Copilot
-git clone https://github.com/github/copilot.vim \
-   ~/.config/nvim/pack/github/start/copilot.vim
 
 # LazyGit tool
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
@@ -176,17 +169,6 @@ sudo apt install tilix # Terminal Tool
 # run these gui Apps with '&' at the end to run in background
 ```
 
-### Powershell (pwsh)
-
-```bash
-sudo apt update
-sudo apt install -y wget apt-transport-https software-properties-common
-wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
-sudo dpkg -i packages-microsoft-prod.deb
-sudo apt update
-sudo apt install -y powershell
-```
-
 ### Lua
 
 ```bash
@@ -200,7 +182,7 @@ sudo make install
 wget https://luarocks.org/releases/luarocks-3.8.0.tar.gz
 tar zxpf luarocks-3.8.0.tar.gz
 cd luarocks-3.8.0
-./configure --with-lua-include=/usr/local/with-lua-include
+./configure --with-lua-include=/usr/local/include
 make
 sudo make install
 ```
