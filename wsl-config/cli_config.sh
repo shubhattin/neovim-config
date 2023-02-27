@@ -1,9 +1,8 @@
 alias cls=clear
 
-# This option should have been aleady set in ~/.zshrc
-# if [ -d ~/.local/bin ]; then
-#     export PATH="$HOME/.local/bin:$PATH"
-# fi
+ if [ -d ~/.local/bin ]; then
+     export PATH="$HOME/.local/bin:$PATH"
+ fi
 
 # Python
 # alias py='python3'
