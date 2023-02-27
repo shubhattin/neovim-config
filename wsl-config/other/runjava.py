@@ -18,7 +18,7 @@ if sh.argv[0] == "--install":
         sh.write(f"{py_path}\\runjava.py", sh.read("runjava.py"))
         print("Installed as 'runjava'")
         exit()
-    elif sh.get_cuurent_platform() == "Linux":
+    elif sh.IS_LINUX:
         pth = os.path.realpath(__file__)
         inst_path = sh.home() + "/.local/bin/runjava"
         sh.copy_file(pth, inst_path)

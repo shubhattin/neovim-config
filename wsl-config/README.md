@@ -1,7 +1,5 @@
 # WSL Ubuntu Config
 
-## Basics
-
 ### Configuring DNS
 
 ```bash
@@ -28,8 +26,6 @@ sudo apt install manpages-dev
 sudo apt install software-properties-common
 sudo apt update
 ```
-
-## Installing zsh, Git, GitHub CLI, NVM(Node and NPM), Python
 
 ### zsh
 
@@ -144,10 +140,9 @@ Write the output path `update-alternatives --config java`
 
 ```bash
 curl -s https://get.sdkman.io | bash # SDKMan
-sdk install kotlin
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+# then do -> sdk install kotlin
 ```
-
-## Others
 
 ### zhc/bash
 
