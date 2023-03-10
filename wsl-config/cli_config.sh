@@ -1,8 +1,8 @@
 alias cls=clear
 
- if [ -d ~/.local/bin ]; then
-     export PATH="$HOME/.local/bin:$PATH"
- fi
+if [ -d ~/.local/bin ]; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
 
 # Python
 # alias py='python3'
@@ -57,4 +57,6 @@ fi
 # Go
 if [ -d /usr/local/go ]; then
 	export PATH=$PATH:/usr/local/go/bin
+	export GOPATH=$HOME/go
+	export PATH=$PATH:$GOPATH/bin
 fi
