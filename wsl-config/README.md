@@ -76,6 +76,12 @@ Config :- `~/.tmux.conf`
 set -g mouse on
 # vim mode in scroll
 setw -g mode-keys vi
+
+# Setting background color
+set -g default-terminal "screen-256color"
+# set -g status-bg black
+# set -g status-fg white
+set -g status-style bg=default
 ```
 
 ### Python
