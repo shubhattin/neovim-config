@@ -51,10 +51,8 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt install git
 
-# Git Credential Manager
-# This will help connect to windows credential manager for git
-git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
-# the option above should not be on windows
+# Authentication to Github should be done through gh CLI
+
 git config --global init.defaultBranch main # default branch name
 git config --global core.autocrlf input
 git config --global core.safecrlf true
