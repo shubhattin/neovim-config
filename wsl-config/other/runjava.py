@@ -10,28 +10,28 @@ import shubhlipi as sh
 
 if len(sh.argv) == 0:
     print("Usage: runjava <filename>")
-    exit()
+    sys.exit()
 
 if sh.argv[0] == "--install":
     if sh.IS_WINDOWS:
         py_path = os.path.dirname(sys.executable) + r"\Scripts"
         sh.write(f"{py_path}\\runjava.py", sh.read("runjava.py"))
         print("Installed as 'runjava'")
-        exit()
+        sys.exit()
     elif sh.IS_LINUX:
         pth = os.path.realpath(__file__)
         inst_path = sh.home() + "/.local/bin/runjava"
         sh.copy_file(pth, inst_path)
         sh.cmd(f"chmod +x {inst_path}")
         print("Installed as 'runjava'")
-        exit()
+        sys.exit()
 
 nm = sh.argv[0]
 if nm.endswith(".java"):
     nm = nm[:-5]
 if not os.path.isfile(f"{nm}.java"):
     print(nm + ".java not found")
-    exit()
+    sys.exit()
 
 pth = nm.split("/")
 parent_path = sh.parent(nm)

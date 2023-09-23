@@ -9,7 +9,7 @@ import shubhlipi as sh
 
 if len(sh.argv) == 0:
     print("Usage: runcpp <filename>")
-    exit()
+    sys.exit()
 
 
 def delete_file(fl: str):
@@ -22,14 +22,14 @@ if sh.argv[0] == "--install":
         py_path = os.path.dirname(sys.executable) + r"\Scripts"
         sh.write(f"{py_path}\\runcpp.py", sh.read("runcpp.py"))
         print("Installed as 'runcpp'")
-        exit()
+        sys.exit()
     elif sh.IS_LINUX:
         pth = os.path.realpath(__file__)
         INST_PATH = sh.home() + "/.local/bin/runcpp"
         sh.copy_file(pth, INST_PATH)
         sh.cmd(f"chmod +x {INST_PATH}")
         print("Installed as 'runcpp'")
-        exit()
+        sys.exit()
 
 NM = sh.argv[0]
 
@@ -40,10 +40,10 @@ elif os.path.isfile(f"{NM}.c"):
 
 if not NM.endswith(".c") and not NM.endswith(".cpp"):
     print("Not a C/C++ file")
-    exit()
+    sys.exit()
 if not os.path.isfile(f"{NM}"):
     print(NM + " not found")
-    exit()
+    sys.exit()
 
 compiler_name = {"cpp": "g++", "c": "gcc"}[NM.split(".")[-1]]
 
@@ -73,3 +73,4 @@ elif compile_data[0] == 0:
         print(e)
     finally:
         delete_file(f"{ONLY_NAME}.{OUTPUT_EXT}")
+
