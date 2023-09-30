@@ -5,6 +5,13 @@ import os
 import sys
 from typing import Any, List
 
+try:
+    import shubhlipi
+except ModuleNotFoundError:
+    os.system("pip install shubhlipi")
+    print("\nRequired Dependencies Installed")
+    sys.exit()
+
 import shubhlipi as sh
 
 if len(sh.argv) == 0:
@@ -22,6 +29,7 @@ if sh.argv[0] == "--install":
         py_path = os.path.dirname(sys.executable) + r"\Scripts"
         sh.write(f"{py_path}\\runcpp.py", sh.read("runcpp.py"))
         print("Installed as 'runcpp'")
+        # Also ensure that 'PY' is added in the PATH_TEXT Environment Variable
         sys.exit()
     elif sh.IS_LINUX:
         pth = os.path.realpath(__file__)
@@ -69,8 +77,7 @@ elif compile_data[0] == 0:
             sh.cmd(f"{CMD}./{ONLY_NAME}.{OUTPUT_EXT}", direct=False)
         elif sh.IS_WINDOWS:
             sh.cmd(f"{CMD}.\\{ONLY_NAME}.{OUTPUT_EXT}", direct=False)
-    except Exception as e:
-        print(e)
+    except:
+        pass
     finally:
         delete_file(f"{ONLY_NAME}.{OUTPUT_EXT}")
-

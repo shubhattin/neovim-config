@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
 
+# Simple Tool to run java Programs
 import os
 import re
 import sys
 from typing import Any, List
 
-# Simple Tool to run java Programs
+try:
+    import shubhlipi
+except ModuleNotFoundError:
+    os.system("pip install shubhlipi")
+    print("\nRequired Dependencies Installed")
+    sys.exit()
+
 import shubhlipi as sh
 
 if len(sh.argv) == 0:
