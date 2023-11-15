@@ -12,6 +12,18 @@ sudo bash -c 'echo "generateResolvConf = false" >> /etc/wsl.conf'
 sudo chattr +i /etc/resolv.conf # setting immutable
 ```
 
+#### Releasing Disk Space from WSL
+
+The auto allocated disk space(auto exapanding) can be released back into the host drive.
+
+```pwsh
+# Run in Powershell(Administrator)
+wsl.exe --shutdown
+# Replace with your username
+cd "C:\Users\shubh\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState"
+optimize-vhd -Path .\ext4.vhdx -Mode full
+```
+
 ### Download few Basic packages
 
 ```bash
