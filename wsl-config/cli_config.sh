@@ -44,9 +44,9 @@ if [ -f ~/.cargo/env ]; then
 fi
 
 # Julia
-if [ -d ~/.julia/bin ]; then
-	export PATH="$HOME/.julia/bin:$PATH"
-fi
+# if [ -d ~/.julia/bin ]; then
+# 	export PATH="$HOME/.julia/bin:$PATH"
+# fi
 
 # SDKMan
 if [ -f ~/.sdkman/bin/sdkman-init.sh ]; then

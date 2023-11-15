@@ -19,7 +19,6 @@ sudo apt update
 sudo apt upgrade
 sudo apt install sl # just to test
 sudo apt install build-essential gdb # compilers
-sudo apt install llvm clang lldb lld
 sudo apt install cmake
 sudo apt install libreadline-dev unzip zip
 sudo apt install manpages-dev
@@ -35,12 +34,20 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sudo apt install fonts-powerline
 ```
 
+Import the configs using the command below, add it to both `.bashrc` and `.zshrc`.
+
+```bash
+source "$HOME/.config/nvim/wsl-config/cli_config.sh"
+# The file below is optional, this is the place where you could define your Environment Variabels
+source "$HOME/.config/nvim/wsl-config/my_env.sh"
+```
+
 ### NVM(Node Version Manager)
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 # Install the nvm version you prefer 
-# like nvm install 18.12.1
+# like nvm install 20.9
 ```
 
 ### Git
@@ -129,7 +136,7 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 ```
 
-### Java
+### Java and Kotlin
 
 ```bash
 sudo apt install default-jdk
@@ -140,22 +147,10 @@ update-alternatives --config java
 Add `JAVA_HOME` Environment variable to `/etc/environment`.
 Write the output path `update-alternatives --config java`
 
-### Kotlin
-
 ```bash
 curl -s https://get.sdkman.io | bash # SDKMan
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 # then do -> sdk install kotlin
-```
-
-### zhc/bash
-
-Import the configs using the command below, add it to both `.bashrc` and `.zshrc`.
-
-```bash
-source "$HOME/.config/nvim/wsl-config/cli_config.sh"
-# The file below is optional, this is the place where you could define your Environment Variabels
-source "$HOME/.config/nvim/wsl-config/my_env.sh"
 ```
 
 ### Optional GUI Apps
@@ -186,7 +181,7 @@ make
 sudo make install
 ```
 
-### Julia
+<!-- ### Julia
 
 ```bash
 wget https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.1-linux-x86_64.tar.gz
@@ -200,7 +195,7 @@ rm julia-1.8.1-linux-x86_64.tar.gz
 ```bash
 sudo apt install r-base
 sudo apt install perl
-```
+``` -->
 
 ### 7zip
 
