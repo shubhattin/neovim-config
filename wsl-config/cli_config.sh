@@ -1,5 +1,5 @@
 alias cls=clear
-alias expl=explorer.exe .
+alias expl="explorer.exe ."
 
 if [ -d ~/.local/bin ]; then
 	export PATH="$HOME/.local/bin:$PATH"
