@@ -58,7 +58,7 @@ source "$HOME/.config/nvim/wsl-config/my_env.sh"
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-# Install the nvm version you prefer 
+# Install the nvm version you prefer
 # like nvm install 20.9
 ```
 
@@ -128,9 +128,9 @@ sudo apt install python3-apt # apt manager python
 ### _**NeoVim**_
 
 ```bash
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt update
-sudo apt install neovim
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
 
 # Installing Clipboard tool win32yank.exe
 curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
@@ -178,9 +178,9 @@ sudo apt install tilix # Terminal Tool
 ### Lua
 
 ```bash
-curl -R -O http://www.lua.org/ftp/lua-5.4.4.tar.gz
-tar -zxf lua-5.4.4.tar.gz
-cd lua-5.4.4
+curl -L -R -O https://www.lua.org/ftp/lua-5.4.6.tar.gz
+tar zxf lua-5.4.6.tar.gz
+cd lua-5.4.6
 make linux test
 sudo make install
 

@@ -16,7 +16,7 @@ null_ls.setup({
   }
 })
 -- Tools can be installed from `Mason` otherwise `apt`
--- sudo apt install cmake_format
+-- sudo apt install cmake_format shfmt cmake
 
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
