@@ -128,6 +128,7 @@ sudo apt install python3-apt # apt manager python
 ### _**NeoVim**_
 
 ```bash
+# Install latest stable release of nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
@@ -146,6 +147,13 @@ LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/re
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
+```
+
+To use nvim of wsl properly in vscode
+
+```json
+"vscode-neovim.useWSL": true,
+"vscode-neovim.neovimExecutablePaths.linux": "/opt/nvim-linux64/bin/nvim",
 ```
 
 ### Java and Kotlin

@@ -37,11 +37,11 @@ if not vim.g.vscode then
     -- Set a nerd font to enable this font service
     -- e.g :- CaskaydiaCove NF, Fira Code NF Retina, Hack NF
     -- Mono font version of the above do not show icons properly
-    use 'romgrk/barbar.nvim'        -- Multple tabs/buffers
-    use "akinsho/toggleterm.nvim"   -- Terminal
+    use 'romgrk/barbar.nvim'          -- Multple tabs/buffers
+    use "akinsho/toggleterm.nvim"     -- Terminal
     use('mbbill/undotree')
     use { 'lewis6991/gitsigns.nvim' } -- shows git modifers in files
-    use('tpope/vim-fugitive')       -- GitTool
+    use('tpope/vim-fugitive')         -- GitTool
     use("github/copilot.vim")
     use 'kdheepak/lazygit.nvim'
 
