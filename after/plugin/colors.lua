@@ -1,3 +1,5 @@
-if vim.g.vscode then return end
+if vim.g.vscode then
+	return
+end
 
-vim.cmd [[colorscheme dracula]]
+vim.cmd([[colorscheme dracula]])

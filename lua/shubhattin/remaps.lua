@@ -13,13 +13,13 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- Copying to system clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["*y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["*y]])
 vim.keymap.set("n", "<leader>Y", [["*Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 if not vim.g.vscode then -- not in vscode
-  vim.keymap.set("i", "<C-c>", "<Esc>") -- we can use this to escape from visual block mode after typing
+	vim.keymap.set("i", "<C-c>", "<Esc>") -- we can use this to escape from visual block mode after typing
 end
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -37,7 +37,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- This is for wsl only
 if os.getenv("WSL_DISTRO_NAME") == "Ubuntu" then
-  vim.cmd [[
+	vim.cmd([[
         let g:clipboard = {
           \   'name': 'win32yank-wsl',
           \   'copy': {
@@ -50,5 +50,5 @@ if os.getenv("WSL_DISTRO_NAME") == "Ubuntu" then
           \   },
           \   'cache_enabled': 0,
           \ }
-    ]]
+    ]])
 end
