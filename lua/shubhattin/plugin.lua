@@ -50,6 +50,13 @@ if not vim.g.vscode then
 	use("tpope/vim-fugitive") -- GitTool
 	use("github/copilot.vim")
 	use("kdheepak/lazygit.nvim")
+	use({
+		"andrewferrier/wrapping.nvim",
+		config = function()
+			require("wrapping").setup()
+		end,
+	}) -- wrapping lines (eg for rapping markdown, text files)
+	-- use [ow for soft wrap and ]ow for hard wrap
 
 	-- LSP, Linters, Formatter
 	use("jose-elias-alvarez/null-ls.nvim")
