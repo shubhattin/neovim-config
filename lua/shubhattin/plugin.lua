@@ -78,6 +78,7 @@ if not vim.g.vscode then
 			{ "rafamadriz/friendly-snippets" },
 		},
 	})
+	use("elentok/format-on-save.nvim")
 
 	-- Helper Tools
 	use("ThePrimeagen/vim-be-good")
