@@ -1,4 +1,4 @@
 if vim.g.vscode then
-	return
+  return
 end
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)

@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>Y", [["*Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 if not vim.g.vscode then -- not in vscode
-	vim.keymap.set("i", "<C-c>", "<Esc>") -- we can use this to escape from visual block mode after typing
+  vim.keymap.set("i", "<C-c>", "<Esc>") -- we can use this to escape from visual block mode after typing
 end
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -37,16 +37,16 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- This is for wsl only
 if os.getenv("WSL_DISTRO_NAME") then
-	vim.g.clipboard = {
-		name = "wsl_clipboard",
-		copy = {
-			["+"] = "clip.exe",
-			["*"] = "clip.exe",
-		},
-		paste = {
-			["+"] = "pwsh.exe -NoProfile -Command Get-Clipboard",
-			["*"] = "pwsh.exe -NoProfile -Command Get-Clipboard",
-		},
-		cache_enabled = 0,
-	}
+  vim.g.clipboard = {
+    name = "wsl_clipboard",
+    copy = {
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
+    },
+    paste = {
+      ["+"] = "pwsh.exe -NoProfile -Command Get-Clipboard",
+      ["*"] = "pwsh.exe -NoProfile -Command Get-Clipboard",
+    },
+    cache_enabled = 0,
+  }
 end

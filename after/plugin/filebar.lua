@@ -1,10 +1,10 @@
 if vim.g.vscode then
-	return
+  return
 end
 local map = vim.api.nvim_set_keymap
 local opts = {
-	noremap = true,
-	silent = true,
+  noremap = true,
+  silent = true,
 }
 
 -- Move to previous/next

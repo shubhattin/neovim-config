@@ -1,30 +1,32 @@
 if vim.g.vscode then
-	return
+  return
 end
 local null_ls = require("null-ls")
 
 local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
-	sources = {
-		formatting.prettier,
-		formatting.black,
-		formatting.shfmt,
-		formatting.clang_format,
-		formatting.cmake_format,
-		formatting.isort,
-		formatting.gofumpt,
-		formatting.goimports,
-		formatting.golines,
-		formatting.rustfmt,
-		formatting.stylua,
-	},
+  sources = {
+    formatting.prettier,
+    formatting.black,
+    formatting.shfmt,
+    formatting.clang_format,
+    formatting.cmake_format,
+    formatting.isort,
+    formatting.gofumpt,
+    formatting.goimports,
+    formatting.golines,
+    formatting.rustfmt,
+    formatting.stylua.with({
+      extra_args = { "--indent-width=2", "--indent-type=Spaces" },
+    }),
+  },
 })
 -- Tools can be installed from `Mason` otherwise `apt`
 -- sudo apt install cmake_format shfmt cmake
 
 vim.keymap.set("n", "<leader>f", function()
-	vim.lsp.buf.format()
+  vim.lsp.buf.format()
 end)
 
 --[[
