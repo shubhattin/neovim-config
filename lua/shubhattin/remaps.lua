@@ -36,19 +36,17 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- This is for wsl only
-if os.getenv("WSL_DISTRO_NAME") == "Ubuntu" then
-	vim.cmd([[
-        let g:clipboard = {
-          \   'name': 'win32yank-wsl',
-          \   'copy': {
-          \      '+': 'win32yank.exe -i --crlf',
-          \      '*': 'win32yank.exe -i --crlf',
-          \    },
-          \   'paste': {
-          \      '+': 'win32yank.exe -o --lf',
-          \      '*': 'win32yank.exe -o --lf',
-          \   },
-          \   'cache_enabled': 0,
-          \ }
-    ]])
+if os.getenv("WSL_DISTRO_NAME") then
+	vim.g.clipboard = {
+		name = "wsl_clipboard",
+		copy = {
+			["+"] = "clip.exe",
+			["*"] = "clip.exe",
+		},
+		paste = {
+			["+"] = "pwsh.exe -NoProfile -Command Get-Clipboard",
+			["*"] = "pwsh.exe -NoProfile -Command Get-Clipboard",
+		},
+		cache_enabled = 0,
+	}
 end
