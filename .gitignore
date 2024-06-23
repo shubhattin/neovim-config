@@ -3,5 +3,3 @@
 /plugin/packer_compiled.lua
 /pack/github
 a.lua
-lazy-lock.json
-wsl-config/local-bin
