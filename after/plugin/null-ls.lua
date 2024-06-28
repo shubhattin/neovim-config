@@ -23,7 +23,7 @@ null_ls.setup({
   },
 })
 -- Tools can be installed from `Mason` otherwise `apt`
--- sudo apt install cmake_format shfmt cmake
+-- sudo apt install cmake_format cmake
 
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
@@ -49,6 +49,7 @@ Currently using via Mason
 ◍ markdown-oxide markdown_oxide, markdown_oxide
 ◍ prettier
 ◍ python-lsp-server pylsp, pylsp
+◍ shfmt
 ◍ stylua
 ◍ svelte-language-server svelte, svelte
 ◍ tailwindcss-language-server tailwindcss, tailwindcss
