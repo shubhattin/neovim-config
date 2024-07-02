@@ -15,7 +15,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 -- Copying to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 -- the * register was not working on linux so using + register
-vim.keymap.set("n", "<leader>Y", [["*Y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
@@ -39,6 +39,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- This is for wsl only
 if os.getenv("WSL_DISTRO_NAME") then
   vim.keymap.set({ "n", "v" }, "<leader>y", [["*y]])
+  vim.keymap.set("n", "<leader>Y", [["*Y]])
   -- not sure if + will work on WSL, so leaving it as * as was before for WSL
   vim.g.clipboard = {
     name = "wsl_clipboard",
