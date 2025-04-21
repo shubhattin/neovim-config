@@ -82,7 +82,6 @@ if not vim.g.vscode then
   -- use [ow for soft wrap and ]ow for hard wrap
 
   -- LSP, Linters, Formatter
-  use("jose-elias-alvarez/null-ls.nvim")
   use({
     "VonHeikemen/lsp-zero.nvim",
     dependencies = { -- LSP Support
